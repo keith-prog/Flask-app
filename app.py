@@ -12,14 +12,16 @@ def index():
     return render_template("index.html", title="Home", heading="Home")
 
 
-@app.get("/hello")  # HTTP request  GET hello
-def hello():
-    return "Hello from my first Flask WebApp : it is your fault"
+@app.get("/bio")
+def bio():
+     return render_template("bio.html", title="Bio", heading="Bio")
 
 
-@app.get("/personal")
+
+
+@app.get("/interests")
 def personal():
-    pass
+   return render_template("interests.html", title="Interests", heading="My Interestes")
 
 
 @app.get("/CV")
@@ -48,12 +50,12 @@ def save_data():
     Recieve the data from the html form then save it to a disk file. Then reopen with a message into the browser
     """
     # python names = html names
-    the_first = request.form["first"]
-    the_last = request.form["last"]
-    the_dob = request.form["dob"]
+    the_name = request.form["name"]
+    the_email = request.form["email"]
+    the_message= request.form["message"]
     with open("comments.txt", "a") as sf:
-        print(f"{the_first}, {the_last}, {the_dob}", file=sf)
-    return f"Thanks, {the_first}, we promise not to sell your data."
+        print(f"{the_name}, {the_email}, {the_message}", file=sf)
+    return f"Thanks, {the_name}, we promise not to sell your data."
 
 
 if __name__ == "__main__":

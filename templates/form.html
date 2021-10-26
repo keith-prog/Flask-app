@@ -1,11 +1,17 @@
 {% extends "base.html" %}
     {% block body %}
     <form action="/processform" method="post">
-        First Name:<input type="text" name="first"><br/>
-        Last Name:<input type="text" name="last"><br/>
-        DOB: <input type="date" name="dob">
+        <fieldset>
+            <legend>Leave Message</legend>
+            <label for="name"> Name : </label>
+            <input type="text" name="name"><br/>
+            <label for="email">E-mail: </label>
+            <input type="email" name="email"><br/>
+            <label for="message">message: </label>
+        <input type="textbox" name="message">
         <input type="submit" value="Submit">
+        </fieldset>
     </form>
 
-    Click <a href="/">Here</a>To return to home page. 
+   
     {% endblock %}    

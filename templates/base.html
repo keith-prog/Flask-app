@@ -7,7 +7,16 @@
         <title>{{title}}</title>
     </head>
     <body>
-        <h2>{{ heading }}</h2>
+
+        <nav>
+            <a href="/">Home</a> | 
+            <a href="/bio">My Bio</a> |
+            <a href="/CV">My CV</a> |
+            <a href="/interests">Interest</a> |
+            <a href="/technologies">Technologies</a> |
+        </nav>
+        <h1>{{ heading }}</h1>
+        
 
         {% block body %}
         {% endblock %}
