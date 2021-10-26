@@ -25,7 +25,7 @@ def personal():
 @app.get("/CV")
 def display_CV():
 
-    return render_template("Davidson_Keith_CV.pdf")
+    return render_template("CV.html", heading="My CV",)
 
 
 # @app.route("/Showform", methods["GET", "POST", "PUT", "DELETE"])
@@ -33,10 +33,7 @@ def display_CV():
 
 @app.get("/showform")
 def display_form():
-
-    return render_template(
-        "form.html", title="Welcome", heading="TellUs About yourself"
-    )
+    return render_template("form.html", title="Welcome", heading="TellUs About yourself")
     """
     Retreive the form.html file from the hard disk, and send it to the browser.
     """
