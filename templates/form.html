@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends "base.html" %}
+    {% block body %}
+    <form action="/processform" method="post">
+        First Name:<input type="text" name="first"><br/>
+        Last Name:<input type="text" name="last"><br/>
+        DOB: <input type="date" name="dob">
+        <input type="submit" value="Submit">
+    </form>
 
-    </head>
-    </html>
-    <body>
-        
-        <form action="/processform" method="post">
-            First Name:<input type="text" name="first"><br/>
-            Last Name:<input type="text" name="last"><br/>
-            DOB: <input type="date" name="dob">
-            <input type="submit" value="Submit">
-        </form>
-
-        Click <a href="/">Here</a>To return to home page.
-
-      
-    </body>
-</html>
+    Click <a href="/">Here</a>To return to home page. 
+    {% endblock %}    
