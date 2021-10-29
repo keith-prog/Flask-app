@@ -27,15 +27,22 @@ def personal():
 @app.get("/CV")
 def display_CV():
 
-    return render_template("CV.html", heading="My CV",)
+    return render_template("CV.html", heading="My CV")
 
+@app.get("/technologies")
+def tech():
+    return render_template("technologies.html", heading="My Favorite Computing Technologies")
 
 # @app.route("/Showform", methods["GET", "POST", "PUT", "DELETE"])
+
+@app.get("/artificial_intelligence")
+def AI():
+    return render_template("AI.html", heading="Artificial Intelligence")
 
 
 @app.get("/showform")
 def display_form():
-    return render_template("form.html", title="Welcome", heading="TellUs About yourself")
+    return render_template("form.html", title="Welcome", heading="Please Leave a message")
     """
     Retreive the form.html file from the hard disk, and send it to the browser.
     """
@@ -55,7 +62,7 @@ def save_data():
     the_message= request.form["message"]
     with open("comments.txt", "a") as sf:
         print(f"{the_name}, {the_email}, {the_message}", file=sf)
-    return f"Thanks, {the_name}, we promise not to sell your data."
+    return f"Thanks, {the_name}, Your message:  {the_message}."
 
 
 if __name__ == "__main__":
