@@ -35,10 +35,17 @@ def tech():
 
 # @app.route("/Showform", methods["GET", "POST", "PUT", "DELETE"])
 
-@app.get("/artificial_intelligence")
+@app.get("/technologies/artificial_intelligence")
 def AI():
     return render_template("AI.html", heading="Artificial Intelligence")
 
+@app.get("/technologies/facial_recognition")
+def facial_recognition():
+    return render_template("facial_recognition.html", heading="Facial Recognition")
+
+@app.get("/technologies/quantum")
+def Quantum():
+    return render_template("quantum.html", heading="Facial Recognition")    
 
 @app.get("/showform")
 def display_form():
