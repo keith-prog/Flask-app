@@ -1,97 +1,51 @@
 * {
     box-sizing: border-box;
   }
+
   
   body {
     font-family: 'Open-sans', sana-serif;
   }
-  
-  .primary-text { 
-    color:#16c71f;
-  }
-  
-  /*NAVBAR*/
-  #navbar{
-      text-transform:uppercase;
-  }
-  #navbar li{
-      display:inline;
-      padding-right: 20px;
-      list-style:none;
-      color: orange;
-  }
-  
-  
-   #navbar a:hover{
-      color:orange;
-      border-bottom: 3px solid #16c71f;
-      padding-bottom: 3px;
-  }
-  
-  
-  .span {
-      color:#16c71f;
-  }
-  
-  .bar {
-      border: 1px solid #16c716 ; 
-    background-color: #f1f1f1;
+  #head{
+    float: left;
+    width: 100%;
     padding: 30px;
-    height: 600px;
-      background:url("https://i.ytimg.com/vi/V_f4pqtQOFQ/maxresdefault.jpg")no-repeat center center;
-  
-   
+    height: 200px;
+    background-color:rgb(78, 78, 78);
   }
-  
-  .main {
-      background:#333;
-      border: 1px solid orange ; 
-      border-radius:90px;
-      padding:40px;
-      opacity:0.7;
-  }
-  
-  /* Style the header */
-  .greeting {
-      text-align: center;
-    font-size: 35px;
-    color: white;
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     
   }
-  
-  .greeting1 {
-      text-align: center;
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
+  #navbar{
+	text-transform:uppercase;
     
-  }
-  
-  .bar h2{
-      text-align: center;
-      color: #f1f1f1;
-      font-weight: bold;
-  }
-  
-  
-  
-  
-  
-  
-  /* Style the footer */
-  
+}
+#navbar li{
+	display:inline;
+	padding-right: 20px;
+	list-style:none;
+	color: orange;
+}
+
+
+ #navbar a:hover{
+	color:orange;
+	border-bottom: 3px solid #16c71f;
+	padding-bottom: 3px;
+}
+
   .bottom{
-   float: left;
-   width: 33.33%;
-   padding: 30px;
-   height: 200px;
-   line-height: 1.5em;
-   color:#f1f1f1;
-   background-color:rgb(78, 78, 78);
+    float: left;
+    width: 100%;
+    padding: 30px;
+    height: 200px;
+    line-height: 1.5em;
+    color:#f1f1f1;
+    background-color:rgb(78, 78, 78);
+ text-align: center; 
    
-   text-align: center;
-   
-   
-  
-  }
+   }
   
