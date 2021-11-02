@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.get("/")  # HTTP request : GET  /
 def index():
-    # return datetime.datetime.now().ctime()
+ 
     return render_template("index.html", title="Home", heading="Home")
 
 
@@ -45,7 +45,7 @@ def facial_recognition():
 
 @app.get("/technologies/quantum")
 def Quantum():
-    return render_template("quantum.html", heading="Facial Recognition")    
+    return render_template("quantum.html", heading="Quantum Computing")    
 
 @app.get("/showform")
 def display_form():
@@ -69,7 +69,7 @@ def save_data():
     the_message= request.form["message"]
     with open("comments.txt", "a") as sf:
         print(f"{the_name}, {the_email}, {the_message}", file=sf)
-    return f"Thanks, {the_name}, Your message:  {the_message}."
+    return f"Thanks, {the_name}, Your message:  {the_message}.<br/><a href='/'>Back to Home</a>"
 
 
 if __name__ == "__main__":
