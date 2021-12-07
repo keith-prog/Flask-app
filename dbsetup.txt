@@ -1,0 +1,8 @@
+create database commentsDB;
+ grant all on commentsDB.* to 'comment' identified by 'commentpasswd';
+ MariaDB [commentsdb]> create table comments (
+    -> id int not null auto_increment primary key,
+    -> email varchar(50) not null,
+    -> message varchar(200) not null,
+    -> time timestamp not null default current_timestamp() on update current_timestamp()
+    -> );

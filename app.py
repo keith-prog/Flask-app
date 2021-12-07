@@ -1,9 +1,14 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, request, jsonify
 
 
 import datetime
 
 app = Flask(__name__)
+
+import DBcm
+from appconfig import config
+
+
 
 
 @app.get("/")  # HTTP request : GET  /
@@ -60,8 +65,9 @@ def display_form():
     )
 
 
-@app.post("/processform")
+@app.post("/savedata", methods=['POST'])
 def save_data():
+
     """
     Recieve the data from the html form then save it to a disk file. Then reopen with a message into the browser
     """
@@ -69,10 +75,31 @@ def save_data():
     the_name = request.form["name"]
     the_email = request.form["email"]
     the_message = request.form["message"]
-    with open("comments.txt", "a") as sf:
-        print(f"{the_name}, {the_email}, {the_message}", file=sf)
-    return f"Thanks, {the_name},{the_email} Your message:  {the_message}.<br/><a href='/'>Back to Home</a>"
+    # save the pieces of data to the database table.
+    with DBcm.UseDatabase(config) as db:
 
+        SQL = """
+            insert into commentsdb
+            (name, email, message)
+            values
+            ( %s, %s, %s)
+        """
+        db.execute(SQL, (the_name, the_email, the_message))
+    return render_template(
+        "thanks.html", title="Thanks for your information", who=the_name, what=the_message,
+    )
+
+@app.get("/getdata")
+def grab_latest_data():
+    with DBcm.UseDatabase(config) as db:
+
+        SQL = """
+               select name, email, message
+               from comments
+               """    
+        db.execute(SQL)
+        data = db.fetchall()
+    return jsonify(data)           
 
 if __name__ == "__main__":
     app.run(debug=True)
