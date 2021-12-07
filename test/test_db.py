@@ -21,7 +21,7 @@ def test_count_increase(client, clean_up_db):
         "id": "101",
         "name": "test69",
         "email": "test@test.com",
-        "comment": "It is a test",
+        "message": "It is a test",
         "time": "2017-07-23, 13:10:11"
     }
     # Send the data to webapp using the FORM's URL.
@@ -43,7 +43,7 @@ def test_last_row(client, clean_up_db):
         "id": "101",
         "name": "test69",
         "email": "test@test.com",
-        "comment": "It is a test",
+        "message": "It is a test",
         "time": "2017-07-23, 13:10:11",
     }
     # Send the data to webapp using the FORM's URL.
@@ -51,7 +51,7 @@ def test_last_row(client, clean_up_db):
 
     with DBcm.UseDatabase(config) as db:
         SQL = """
-            select name, email, comment
+            select name, email, message
             from commentsdb
             order by id desc
             limit 1
