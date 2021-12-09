@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+	<h1>{{ title }}</h1>
+    <h2>{{heading}}</h2>
+	<table>
+        <thead>
+        <tr>
+           
+            <th>Name</th>
+            <th>Message</th>
+            <th>Date/Time</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data %} 
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    
+                </tr>
+            {% endfor %}        
+        </tbody>
+    </table>
+{% endblock %}

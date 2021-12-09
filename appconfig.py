@@ -12,7 +12,7 @@ if where == -1:
     }
 else:
     # Not on PA.
-    
+
     config = {
         "host": "keithdavidson.mysql.pythonanywhere-services.com",
         "database": "keithdavidson$default",

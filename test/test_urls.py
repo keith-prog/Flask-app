@@ -4,11 +4,8 @@ from flask import request
 def test_up(client):
     """ Test to see of the server is up. """
     assert client.get("/").status_code == 200
-
-
-def test_missing(client):
-    """ Test to see an appropriate response for a missing URL. """
-    assert client.get("/missing").status_code == 404
+    resp = client.get("/")
+    assert "<html>" in resp.get_data(True)
 
 
 def test_correct_form(client):
@@ -18,13 +15,34 @@ def test_correct_form(client):
     """
     response = client.get("/")
     assert response.status_code == 200
-    # response.data is a binary text version of the HTML page.
-    assert (
-        bytes('<form action="/savedata" method="post">', encoding="utf-8")
-        in response.data
-    )
-    assert response.data.startswith(bytes("<!DOCTYPE html>", encoding="utf-8"))
 
+
+def test_CV(client):
+    assert client.get("/CV").status_code == 200
+
+
+def test_bio(client):
+    assert client.get("/bio").status_code == 200
+
+
+def test_interests(client):
+    assert client.get("/interests").status_code == 200
+
+
+def test_technologies(client):
+    assert client.get("/technologies").status_code == 200
+
+def test_AI(client):
+    assert client.get("/technologies/artificial_intelligence").status_code == 200
+
+def test_form(client):
+    assert client.get("/showform").status_code == 200
+
+def test_facial(client):
+    assert client.get("/technologies/facial_recognition").status_code == 200
+
+def test_Quantum(client):
+    assert client.get("/technologies/quantum").status_code == 200    
 
 def test_form_operation(client, clean_up_db):
     """ Create some test/sample data, then POST the data to the server.  Ensure
@@ -33,15 +51,19 @@ def test_form_operation(client, clean_up_db):
         was received then send back to the browser in the response.
     """
     form_data = {
-        "year": "4",
-        "student": "teststudent",
-        "login": "C0000test",
-        "addr": "00:00:00:00:00:00",
+        "name": "test",
+        "email": "test@test.com",
+        "message": "test",
     }
     response = client.post("/savedata", data=form_data)
     assert request.method == "POST"
     assert response.status_code == 200
-    resp = response.data  # The binary text version of the HTML response.
-    assert resp.startswith(bytes("<!DOCTYPE html>", encoding="utf-8"))
-    assert bytes(form_data["login"], encoding="utf-8") in resp
-    assert bytes(form_data["addr"], encoding="utf-8") in resp
+
+
+def test_formats(client):
+    """ Test to see what comes back """
+    assert client.get("/").status_code == 200
+
+    resp = client.get("/")
+
+    assert "<html>" in resp.get_data(True)
