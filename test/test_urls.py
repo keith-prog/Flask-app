@@ -32,17 +32,26 @@ def test_interests(client):
 def test_technologies(client):
     assert client.get("/technologies").status_code == 200
 
+
 def test_AI(client):
     assert client.get("/technologies/artificial_intelligence").status_code == 200
+
 
 def test_form(client):
     assert client.get("/showform").status_code == 200
 
+
 def test_facial(client):
     assert client.get("/technologies/facial_recognition").status_code == 200
 
+
 def test_Quantum(client):
-    assert client.get("/technologies/quantum").status_code == 200    
+    assert client.get("/technologies/quantum").status_code == 200
+
+
+def test_getData(client):
+    assert client.get("/getdata").status_code == 200
+
 
 def test_form_operation(client, clean_up_db):
     """ Create some test/sample data, then POST the data to the server.  Ensure

@@ -13,7 +13,7 @@
          <img src="/static/photos/Davidson_Keith_Photo1.jpg" alt="Photo of Keith Davidson" class="center" style="border-radius: 50%;" width="150" height="150">
           
         </heading>
-
+        <div id="nav">
          <nav id="navbar">
             <a href="/">Home</a> | 
             <a href="/bio">My Bio</a> |
@@ -23,16 +23,20 @@
             <a href="/showform">Leave Message</a> |
             <a href="/getdata">All Messages</a> |
         </nav>
+        </div>
+        
         <h1>{{ heading }}</h1>
         
 
         {% block body %}
         {% endblock %}
+        
         <br/>
         <hr/>
         <div class="bottom" >
         <h4>copyright (c) 2021 Keith</h4>
         </div> 
+        
      </body>
     
 </html>

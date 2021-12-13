@@ -1,5 +1,6 @@
 {% extends "base.html" %}
     {% block body %}
+    <div class="container">
     <form action="/savedata" method="post">
         <fieldset>
             <legend>Leave Message</legend>
@@ -12,6 +13,7 @@
             <input type="submit" value="Submit">
         </fieldset>
     </form>
+    </div>
 
    
     {% endblock %}    

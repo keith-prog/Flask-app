@@ -1,6 +1,6 @@
 create database commentsDB;
  grant all on commentsDB.* to 'comment' identified by 'commentpasswd';
- MariaDB [commentsdb]> create table comments (
+  create table comments (
      id int not null auto_increment primary key,
      name varchar(40) not null,
      email varchar(50) not null,

@@ -10,12 +10,6 @@ from appconfig import config
 
 @pytest.fixture
 def app():
-    app = webapp.app
-    return app
-
-
-@pytest.fixture
-def app():
     """ 
         This fixture creates the client object before each test runs, assuming
         the test references the client object.

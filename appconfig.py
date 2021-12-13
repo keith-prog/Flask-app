@@ -14,8 +14,8 @@ else:
     # Not on PA.
 
     config = {
-        "host": "keithdavidson.mysql.pythonanywhere-services.com",
-        "database": "keithdavidson$default",
-        "user": "keithdavidson",
+        "host": "c00252500.mysql.pythonanywhere-services.com",
+        "database": "c00252500$default",
+        "user": "c00252500",
         "password": "Peace212",
-    }
+    }  # pragma: no cover

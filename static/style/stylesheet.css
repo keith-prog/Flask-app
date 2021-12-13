@@ -1,11 +1,15 @@
 * {
     box-sizing: border-box;
+    
   }
 
   
   body {
     font-family: 'Open-sans', sana-serif;
+    margin:0;
+   
   }
+ 
   #head{
     float: left;
     width: 100%;
@@ -35,6 +39,26 @@
 	color:orange;
 	border-bottom: 3px solid #16c71f;
 	padding-bottom: 3px;
+}
+.container{
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 5px 10px #888888;
+  list-style: none;
+}
+.cvContainer{
+  
+  margin: auto;
+  width: 90%;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 5px 10px #888888;
+  list-style: none;
 }
 
 table {

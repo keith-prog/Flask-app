@@ -87,8 +87,6 @@ def save_data():
     )
 
 
-
-
 @app.get("/getdata")
 def grab_latest_data():
     with DBcm.UseDatabase(config) as db:
@@ -99,10 +97,8 @@ def grab_latest_data():
                """
         db.execute(SQL)
         data = db.fetchall()
-    return render_template(
-        "message.html", title="Welcome", heading="Messages", data=data,
-    )
+    return render_template("message.html", title="Welcome", data=data,)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True)  # pragma: no cover
