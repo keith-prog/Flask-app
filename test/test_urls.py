@@ -1,20 +1,15 @@
 from flask import request
 
 
-def test_up(client):
-    """ Test to see of the server is up. """
-    assert client.get("/").status_code == 200
-    resp = client.get("/")
-    assert "<html>" in resp.get_data(True)
-
-
 def test_correct_form(client):
     """ Grab the home page, check for 200 code (all ok), then check to
         see if we have received the correct form and that the response is
         a HTML page.
     """
-    response = client.get("/")
+    response = client.get("/showform")
     assert response.status_code == 200
+    resp = client.get("/showform")
+    assert '<form action="/savedata" method="post">' in resp.get_data(True)
 
 
 def test_CV(client):
