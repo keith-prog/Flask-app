@@ -80,10 +80,7 @@ def save_data():
             """
         db.execute(SQL, (the_name, the_email, the_message))
     return render_template(
-        "thanks.html",
-        title="Thanks for your information",
-        who=the_name,
-        what=the_message,
+        "thanks.html", title="Thanks for your message", who=the_name, what=the_message,
     )
 
 
