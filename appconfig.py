@@ -15,7 +15,7 @@ else:
 
     config = {
         "host": "c00252500.mysql.pythonanywhere-services.com",
-        "database": "c00252500$default",
+        "database": "c00252500$commentsdb",
         "user": "c00252500",
         "password": "Peace212",
     }  # pragma: no cover
