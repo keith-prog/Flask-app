@@ -35,9 +35,6 @@ def tech():
     )
 
 
-# @app.route("/Showform", methods["GET", "POST", "PUT", "DELETE"])
-
-
 @app.get("/technologies/artificial_intelligence")
 def AI():
     return render_template("AI.html", heading="Artificial Intelligence")

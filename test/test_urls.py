@@ -4,7 +4,7 @@ from flask import request
 def test_correct_form(client):
     """ Grab the home page, check for 200 code (all ok), then check to
         see if we have received the correct form and that the response is
-        a HTML page.
+        a Form.
     """
     response = client.get("/showform")
     assert response.status_code == 200
@@ -12,6 +12,7 @@ def test_correct_form(client):
     assert '<form action="/savedata" method="post">' in resp.get_data(True)
 
 
+# Check all URL pages recieve a 200 status code
 def test_CV(client):
     assert client.get("/CV").status_code == 200
 
@@ -65,7 +66,10 @@ def test_form_operation(client, clean_up_db):
 
 
 def test_formats(client):
-    """ Test to see what comes back """
+    """ Grab the home page, check for 200 code (all ok), then check to
+        see if we have received the correct form and that the response is
+        a html square.
+    """
     assert client.get("/").status_code == 200
 
     resp = client.get("/")
