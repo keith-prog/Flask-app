@@ -6,7 +6,7 @@ import DBcm
 from appconfig import config
 
 
-@app.get("/")  # HTTP request : GET  /
+@app.get("/")
 def index():
 
     return render_template("index.html", title="Home", heading="Home")

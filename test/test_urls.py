@@ -66,9 +66,9 @@ def test_form_operation(client, clean_up_db):
 
 
 def test_formats(client):
-    """ Grab the home page, check for 200 code (all ok), then check to
-        see if we have received the correct form and that the response is
-        a html square.
+    """ Grab the home page, check for 200 code , then check to
+        see if  the response is
+        a html page.
     """
     assert client.get("/").status_code == 200
 
